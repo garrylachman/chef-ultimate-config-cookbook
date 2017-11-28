@@ -1,2 +1,4 @@
-# chef-ultimate-config-cookbook
-The ultimate chef cookbook for configuration files
+# ultimate_config_cookbook
+
+TODO: Enter the cookbook description here.
+
