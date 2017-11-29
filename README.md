@@ -19,14 +19,22 @@ config = {
   }
 }
 ```
-In your recipe
+### Recipe
+file_content expect to Hash or Attributes (its the same...).
+#### INI Example
 ```
 ini_file '/tmp/4.ini' do
   file_content node.default['config1']
   action :create
 end
 ```
-file_content expect to Hash or Attributes (its the same...).
+#### JSON Example
+```
+json_file '/tmp/4.ini' do
+  file_content node.default['config1']
+  action :create
+end
+```
 
 ### Supported action:
 * create
