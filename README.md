@@ -20,7 +20,14 @@ config = {
 }
 ```
 ### Recipe
-file_content expect to Hash or Attributes (its the same...).
+properties:
+* file_content - config hash, can be referanced to attribute or just Hash, for ini the use the fist level for sections.
+* action - Supported actions:
+* * create
+* * edit
+* * create_or_edit
+* * delete
+* * replace
 #### INI Example
 ```
 ini_file '/tmp/4.ini' do
@@ -35,10 +42,3 @@ json_file '/tmp/4.ini' do
   action :create
 end
 ```
-
-### Supported action:
-* create
-* edit
-* create_or_edit
-* delete
-* replace
