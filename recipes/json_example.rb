@@ -1,10 +1,9 @@
-#
-# Cookbook:: build_cookbook
-# Recipe:: lint
+# Cookbook:: ultimate_config_cookbook
 #
 # The MIT License (MIT)
 #
 # Copyright:: 2017, Garry Lachman
+# https://github.com/garrylachman/chef-ultimate-config-cookbook
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,4 +23,40 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-include_recipe 'delivery-truck::lint'
+json_file '/tmp/4.json' do action :delete end
+json_file '/tmp/5.json' do action :delete end
+json_file '/tmp/6.json' do action :delete end
+
+json_file '/tmp/4.json' do
+  file_content node.default['config1']
+  action :create
+end
+
+edit_content = {
+  'sec1' => { 'garry' => 'edited' },
+  'sec2' => { 'adding' => 'new' }
+}
+
+json_file '/tmp/4.json' do
+  file_content edit_content
+  action :edit
+end
+
+json_file '/tmp/5.json' do
+  file_content node.default['config1']
+  action :create_or_edit
+end
+
+json_file '/tmp/6.json' do
+  file_content edit_content
+  action :create_or_edit
+end
+
+json_file '/tmp/6.json' do
+  action :delete
+end
+
+json_file '/tmp/5.json' do
+  file_content edit_content
+  action :replace
+end

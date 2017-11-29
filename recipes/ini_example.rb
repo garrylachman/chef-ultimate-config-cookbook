@@ -1,10 +1,9 @@
-#
-# Cookbook:: build_cookbook
-# Recipe:: functional
+# Cookbook:: ultimate_config_cookbook
 #
 # The MIT License (MIT)
 #
 # Copyright:: 2017, Garry Lachman
+# https://github.com/garrylachman/chef-ultimate-config-cookbook
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,4 +23,36 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-include_recipe 'delivery-truck::functional'
+ini_file '/tmp/4.ini' do
+  file_content node.default['config1']
+  action :create
+end
+
+edit_content = {
+  'sec1' => { 'garry' => 'edited' },
+  'sec2' => { 'adding' => 'new' }
+}
+
+ini_file '/tmp/4.ini' do
+  file_content edit_content
+  action :edit
+end
+
+ini_file '/tmp/5.ini' do
+  file_content node.default['config1']
+  action :create_or_edit
+end
+
+ini_file '/tmp/6.ini' do
+  file_content edit_content
+  action :create_or_edit
+end
+
+ini_file '/tmp/6.ini' do
+  action :delete
+end
+
+ini_file '/tmp/5.ini' do
+  file_content edit_content
+  action :replace
+end
