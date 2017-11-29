@@ -1,10 +1,9 @@
-#
-# Cookbook:: build_cookbook
-# Recipe:: provision
+# Cookbook:: ultimate_config_cookbook
 #
 # The MIT License (MIT)
 #
 # Copyright:: 2017, Garry Lachman
+# https://github.com/garrylachman/chef-ultimate-config-cookbook
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,4 +23,40 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-include_recipe 'delivery-truck::provision'
+resource_name :ini_file
+
+property :file_path, String, name_property: true
+property :file_content, Hash, {}
+
+require 'inifile'
+
+action :create do
+  if not ::File.exist?(new_resource.file_path)
+    ini_file = IniFile.new(:filename => new_resource.file_path, :content => new_resource.file_content)
+    ini_file.save
+  end
+end
+
+action :edit do
+  if ::File.exist?(new_resource.file_path)
+    ini_file = IniFile.load(new_resource.file_path)
+    ini_file = ini_file.merge(new_resource.file_content)
+    ini_file.save
+  end
+end
+
+action :create_or_edit do
+  action_create
+  action_edit
+end
+
+action :delete do
+  if ::File.exist?(new_resource.file_path)
+    ::File.delete(new_resource.file_path)
+  end
+end
+
+action :replace do
+  action_delete
+  action_create
+end
