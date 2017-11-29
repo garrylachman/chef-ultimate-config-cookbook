@@ -12,5 +12,6 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[ultimate_config_cookbook::default]
+      - recipe[ultimate_config_cookbook::ini_example]
+      - recipe[ultimate_config_cookbook::json_example]
     attributes:
