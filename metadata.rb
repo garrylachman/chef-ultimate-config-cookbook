@@ -1,10 +1,9 @@
-#
-# Cookbook:: build_cookbook
-# Recipe:: deploy
+# Cookbook:: ultimate_config_cookbook
 #
 # The MIT License (MIT)
 #
 # Copyright:: 2017, Garry Lachman
+# https://github.com/garrylachman/chef-ultimate-config-cookbook
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,4 +23,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-include_recipe 'delivery-truck::deploy'
+name 'ultimate_config_cookbook'
+maintainer 'Garry Lachman'
+maintainer_email 'garry@lachman.co'
+license 'MIT'
+source_url 'https://github.com/garrylachman/chef-ultimate-config-cookbook'
+issues_url 'https://github.com/garrylachman/ultimate_config_cookbook/issues'
+description 'Installs/Configures ultimate_config_cookbook'
+long_description 'Installs/Configures ultimate_config_cookbook'
+version '0.1.0'
+chef_version '>= 12.1' if respond_to?(:chef_version)
+
+gem 'inifile'
