@@ -1,10 +1,9 @@
-#
-# Cookbook:: build_cookbook
-# Recipe:: default
+# Cookbook:: ultimate_config_cookbook
 #
 # The MIT License (MIT)
 #
 # Copyright:: 2017, Garry Lachman
+# https://github.com/garrylachman/chef-ultimate-config-cookbook
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,4 +23,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-include_recipe 'delivery-truck::default'
+default['config1']['sec1']['garry'] = 'lachman'
+default['config1']['sec1']['lachman'] = 'garry'
+default['config1']['sec2']['lachman1'] = '1garry'
