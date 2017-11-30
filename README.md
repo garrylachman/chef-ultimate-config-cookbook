@@ -42,3 +42,5 @@ json_file '/tmp/4.ini' do
   action :create
 end
 ```
+
+[logo]: https://www.chef.io/wp-content/uploads/2017/02/chef-logo.png "CHEF"
