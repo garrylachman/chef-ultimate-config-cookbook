@@ -1,4 +1,4 @@
-# ultimate_config_cookbook
+# Ultimate Config Cookbook for CHEF
 
 [Ultimate Config Cookbook @ CHEF Supermarket](https://supermarket.chef.io/cookbooks/ultimate_config_cookbook)
 
