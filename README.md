@@ -9,6 +9,7 @@ Supported formats:
 * JSON
 * YAML
 * TOML
+* Java Properties
 
 ## Install
 
@@ -108,8 +109,18 @@ toml_file '/tmp/4.toml' do
 end
 ```
 
+#### Java Properties Example
+
+```ruby
+properties_file '/tmp/4.properties' do
+  file_content node.default['config1']
+  action :create
+end
+```
+
 ## Changelog
 
+* 0.1.6 - Java Properties Support
 * 0.1.4 - TOML Support
 * 0.1.3 - YAML Support
 
