@@ -121,7 +121,7 @@ end
 
 #### Plist Example
 
-#### Plist config example
+##### Plist config example
 
 ```ruby
 plist_config = {
@@ -138,7 +138,7 @@ plist_config = {
 }
 ```
 
-#### Plist execute example
+##### Plist execute example
 
 ```ruby
 plist_file '/tmp/4.plist' do
