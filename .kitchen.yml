@@ -14,4 +14,5 @@ suites:
     run_list:
       - recipe[ultimate_config_cookbook::ini_example]
       - recipe[ultimate_config_cookbook::json_example]
+      - recipe[ultimate_config_cookbook::yaml_example]
     attributes:
