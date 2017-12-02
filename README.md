@@ -8,6 +8,7 @@ Supported formats:
 * INI
 * JSON
 * YAML
+* TOML
 
 ## Install
 
@@ -98,9 +99,19 @@ yaml_file '/tmp/4.yaml' do
 end
 ```
 
+#### TOML Example
+
+```ruby
+toml_file '/tmp/4.toml' do
+  file_content node.default['config1']
+  action :create
+end
+```
+
 ## Changelog
-0.1.4 - TOML Support
-0.1.3 - YAML Support
+
+* 0.1.4 - TOML Support
+* 0.1.3 - YAML Support
 
 ## License and Authors
 
