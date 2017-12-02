@@ -33,8 +33,17 @@ yaml_file '/tmp/4.yaml' do
 end
 
 edit_content = {
-  'sec1' => { 'garry' => 'edited' },
-  'sec2' => { 'adding' => 'new' }
+  "integer" => 1,
+  "float" => 3.14159,
+  "true" => true,
+  "false" => false,
+  "string" => "hi",
+  "array" => [[1], [2], [3]],
+  "key" => {
+    "group" => {
+      "value" => "lol"
+    }
+  }
 }
 
 yaml_file '/tmp/4.yaml' do
