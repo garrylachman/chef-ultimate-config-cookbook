@@ -29,7 +29,6 @@ property :file_path, String, name_property: true
 property :file_content, Hash, {}
 
 require 'toml'
-require 'json/ext'
 
 class ::Hash
     def deep_merge(second)
