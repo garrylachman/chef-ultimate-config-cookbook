@@ -17,4 +17,5 @@ suites:
       - recipe[ultimate_config_cookbook::yaml_example]
       - recipe[ultimate_config_cookbook::toml_example]
       - recipe[ultimate_config_cookbook::properties_example]
+      - recipe[ultimate_config_cookbook::plist_example]
     attributes:

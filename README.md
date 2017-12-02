@@ -10,6 +10,7 @@ Supported formats:
 * YAML
 * TOML
 * Java Properties
+* Plist
 
 ## Install
 
@@ -118,8 +119,37 @@ properties_file '/tmp/4.properties' do
 end
 ```
 
+#### Plist Example
+
+#### Plist config example
+
+```ruby
+plist_config = {
+  "first_key" => "val1",
+  "int" => 1,
+  "float" => 1.2343,
+  "boolean" => true,
+  "time" => Time.now,
+  "date" => Date.today,
+  "datetime" => DateTime.now,
+  "strings" => ["a", "b", "c"],
+  "ints" => [1,2,3],
+  "hashes" => [{:a => "a"}, {:b => "b"}, {:c => "c"}]
+}
+```
+
+#### Plist execute example
+
+```ruby
+plist_file '/tmp/4.plist' do
+  file_content plist_config
+  action :create
+end
+```
+
 ## Changelog
 
+* 0.1.7 - Plist
 * 0.1.6 - Java Properties Support
 * 0.1.4 - TOML Support
 * 0.1.3 - YAML Support
