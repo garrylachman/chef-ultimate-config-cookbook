@@ -31,7 +31,8 @@ source_url 'https://github.com/garrylachman/chef-ultimate-config-cookbook'
 issues_url 'https://github.com/garrylachman/ultimate_config_cookbook/issues'
 description 'Installs/Configures ultimate_config_cookbook'
 long_description 'Installs/Configures ultimate_config_cookbook'
-version '0.1.3'
+version '0.1.4'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
 gem 'inifile'
+gem 'toml'
