@@ -4,6 +4,7 @@
 
 
 Supported formats:
+
 * INI
 * JSON
 * YAML
@@ -98,6 +99,7 @@ end
 ```
 
 ## Changelog
+0.1.4 - TOML Support
 0.1.3 - YAML Support
 
 ## License and Authors
