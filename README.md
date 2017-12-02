@@ -2,6 +2,12 @@
 
 [Ultimate Config Cookbook @ CHEF Supermarket](https://supermarket.chef.io/cookbooks/ultimate_config_cookbook)
 
+
+Supported formats:
+* INI
+* JSON
+* YAML
+
 ## Install
 
 ### Knife
@@ -56,7 +62,7 @@ config = {
 
 properties:
 
-* `file_content` - config hash, can be referanced to attribute or just Hash, for ini the use the fist level for sections.
+* `file_content` - config hash, can be a reference to attribute or just Hash, for ini the use the fist level for sections.
 * `action` - supported actions:
   * ***create***
   * ***edit***
@@ -76,11 +82,23 @@ end
 #### JSON Example
 
 ```ruby
-json_file '/tmp/4.ini' do
+json_file '/tmp/4.json' do
   file_content node.default['config1']
   action :create
 end
 ```
+
+#### YAML Example
+
+```ruby
+yaml_file '/tmp/4.yaml' do
+  file_content node.default['config1']
+  action :create
+end
+```
+
+## Changelog
+0.1.3 - YAML Support
 
 ## License and Authors
 
